@@ -1,0 +1,46 @@
+.documentList {
+    flex-grow: 1;
+  }
+  
+  .documentList h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .documentTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .documentTable th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .documentTable td {
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .documentTable tr {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fileIcon {
+    margin-right: 10px;
+    color: #3863d9;
+  }
+  
+  .actionButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    margin-left: 10px;
+  }
+  
+  .actionButton:hover {
+    color: #333;
+  }

@@ -1,0 +1,50 @@
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonPrimary {
+  background-color: #155ba9;
+  color: #ffffff;
+}
+
+.buttonPrimary:hover {
+  background-color: #0c3a7b;
+}
+
+.buttonSecondary {
+  background-color: #f764a2;
+  color: #ffffff;
+}
+
+.buttonSecondary:hover {
+  background-color: #c14072;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #6b7280;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #155ba9;
+  box-shadow: 0 0 0 2px #e6eef8;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,46 @@
+.sidebar {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    width: 240px;
+    transition: width 0.3s;
+  }
+  
+  .sidebar.closed {
+    width: 60px;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: var(--color-white);
+    text-decoration: none;
+  }
+  
+  .nav-item.active {
+    background-color: var(--color-quyd-blue);
+  }
+  
+  .nav-item svg {
+    margin-right: 1rem;
+  }
+  
+  .sidebar.closed .nav-item span {
+    display: none;
+  }
