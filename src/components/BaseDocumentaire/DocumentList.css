@@ -1,46 +1,52 @@
-.documentList {
-    flex-grow: 1;
+.document-grid {
+    display: grid;
+    gap: 1rem;
   }
   
-  .documentList h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+  .document-grid.grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
   
-  .documentTable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
+  .document-grid.list {
+    grid-template-columns: 1fr;
   }
   
-  .documentTable th {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 2px solid #eee;
-  }
-  
-  .documentTable td {
-    padding: 10px;
+  .document-card {
     background-color: white;
-  }
-  
-  .documentTable tr {
+    padding: 1rem;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
   
-  .fileIcon {
-    margin-right: 10px;
-    color: #3863d9;
+  .document-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
   
-  .actionButton {
+  .document-type {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .document-actions {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-button,
+  .remove-button {
     background: none;
     border: none;
     cursor: pointer;
-    color: #666;
-    margin-left: 10px;
+    padding: 0.25rem;
+    border-radius: 4px;
   }
   
-  .actionButton:hover {
-    color: #333;
+  .edit-button:hover,
+  .remove-button:hover {
+    background-color: #f0f0f0;
   }

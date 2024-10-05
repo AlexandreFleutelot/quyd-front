@@ -1,0 +1,228 @@
+@import '../../styles/globalStyles.css';
+
+.page-content {
+  background-color: var(--color-gray-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.document-management {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .document-management {
+    flex-direction: row;
+  }
+}
+
+.sidebar {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 16rem;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.sidebar-content {
+  padding: 1rem;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-gray-dark);
+  margin-bottom: 1rem;
+}
+
+.collection-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.collection-button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.collection-button:hover {
+  background-color: var(--color-gray-light);
+}
+
+.collection-button.active {
+  background-color: var(--color-hxm-blue-light);
+  color: var(--color-hxm-blue-main);
+}
+
+.new-collection-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--color-quyd-blue);
+  color: var(--color-white);
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.new-collection-button:hover {
+  background-color: var(--color-hxm-blue-dark);
+}
+
+.main-content {
+  flex: 1;
+}
+
+.content-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.content-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .content-title {
+    margin-bottom: 0;
+  }
+}
+
+.add-document-button {
+    display: flex;
+    align-items: center;
+    background-color: #3863d9;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.add-document-button:hover {
+    background-color: #2d4eb8;
+}
+  
+.add-document-button svg {
+    margin-right: 0.5rem;
+}
+
+.content-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-main);
+}
+
+.search-input {
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  border: 1px solid var(--color-gray-main);
+  border-radius: 0.25rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-quyd-blue);
+  box-shadow: 0 0 0 2px var(--color-hxm-blue-light);
+}
+
+.icon-button {
+  padding: 0.5rem;
+  background-color: var(--color-gray-light);
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+  background-color: var(--color-gray-main);
+}
+
+.document-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.document-grid.grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .document-grid.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .document-grid.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .document-grid.grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.document-card {
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.document-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.document-type {
+  font-size: 0.875rem;
+  color: var(--color-gray-main);
+}

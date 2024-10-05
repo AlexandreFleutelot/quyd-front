@@ -5,7 +5,7 @@ import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Chat from './pages/Chat/Chat';
-import BaseDocumentaire from './pages/BaseDocumentaire/BaseDocumentaire';
+import DocumentManagement from './pages/BaseDocumentaire/DocumentManagement';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from './components/Layout/Layout';
 
@@ -20,7 +20,7 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/home" element={<Home />} />
               <Route path="/chat" element={<Chat />} />
-              <Route path="/database" element={<BaseDocumentaire />} />
+              <Route path="/database" element={<DocumentManagement />} />
             </Route>
           </Route>
         </Routes>
