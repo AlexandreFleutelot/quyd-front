@@ -7,6 +7,9 @@ export const API_ENDPOINTS = {
   USERS: `${API_BASE_URL}/users`,
   DOCUMENTS: `${API_BASE_URL}/documents`,
   FOLDERS: `${API_BASE_URL}/folders`,
+  GROUPS: `${API_BASE_URL}/groups`,
+  ROLES: `${API_BASE_URL}/roles`,
+  ACCESSES: `${API_BASE_URL}/accesses`,
 };
 
 export const getAuthToken = () => localStorage.getItem('authToken');
@@ -32,6 +35,7 @@ export async function apiRequest(endpoint, method = 'GET', body = null, isFormDa
   const config = {
     method,
     headers,
+    credentials: 'include',
   };
 
   if (body) {

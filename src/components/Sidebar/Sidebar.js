@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaComments, FaDatabase } from 'react-icons/fa';
+import { FaHome, FaComments, FaDatabase, FaUser } from 'react-icons/fa';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import './Sidebar.css';
 
@@ -10,6 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { path: '/home', icon: FaHome, label: 'Home' },
     { path: '/chat', icon: FaComments, label: 'Chat' },
     { path: '/database', icon: FaDatabase, label: 'Base documentaire' },
+    { path: '/administration', icon: FaUser, label: 'Administration' },
   ];
 
   return (

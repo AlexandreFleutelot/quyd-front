@@ -1,0 +1,30 @@
+/* src/pages/Administration/Administration.css */
+.administration {
+    padding: 24px;
+  }
+  
+  .admin-title {
+    margin-bottom: 24px;
+  }
+  
+  .ant-menu {
+    margin-bottom: 24px;
+  }
+  
+  .user-management,
+  .group-management,
+  .role-management,
+  .access-management {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ant-table-wrapper {
+    margin-top: 16px;
+  }
+  
+  .ant-btn {
+    margin-right: 8px;
+  }

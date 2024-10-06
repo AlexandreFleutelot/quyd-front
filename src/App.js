@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Chat from './pages/Chat/Chat';
 import DocumentManagement from './pages/BaseDocumentaire/DocumentManagement';
+import Administration from './pages/Administration/Administration';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from './components/Layout/Layout';
 
@@ -21,6 +22,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/database" element={<DocumentManagement />} />
+              <Route path="/administration" element={<Administration />} />
             </Route>
           </Route>
         </Routes>
