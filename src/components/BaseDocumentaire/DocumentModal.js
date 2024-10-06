@@ -3,27 +3,25 @@ import { X } from 'lucide-react';
 import './DocumentModal.css';
 
 const DocumentModal = ({ document, collections, onClose, onAction }) => {
-  const [title, setTitle] = useState('');
-  const [type, setType] = useState('');
+  const [file, setFile] = useState(null);
   const [collectionId, setCollectionId] = useState('');
 
   useEffect(() => {
     if (document) {
-      setTitle(document.title);
-      setType(document.type);
-      setCollectionId(document.collection);
+      setCollectionId(document.collection || '');
     }
   }, [document]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedDocument = {
-      id: document ? document.id : null,
-      title,
-      type,
-      collection: parseInt(collectionId)
-    };
-    onAction(updatedDocument, document ? 'update' : 'add');
+    if (file) {
+      // Only pass the collectionId if it's not an empty string
+      onAction(file, 'add', collectionId || undefined);
+    }
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
   };
 
   return (
@@ -32,35 +30,23 @@ const DocumentModal = ({ document, collections, onClose, onAction }) => {
         <button className="close-button" onClick={onClose}>
           <X size={24} />
         </button>
-        <h2>{document ? 'Edit Document' : 'Add New Document'}</h2>
+        <h2>Upload New Document</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="title">Title</label>
+            <label htmlFor="file">File</label>
             <input
-              id="title"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              id="file"
+              type="file"
+              onChange={handleFileChange}
               required
             />
           </div>
           <div className="form-group">
-            <label htmlFor="type">Type</label>
-            <input
-              id="type"
-              type="text"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="collection">Collection</label>
+            <label htmlFor="collection">Collection (Optional)</label>
             <select
               id="collection"
               value={collectionId}
               onChange={(e) => setCollectionId(e.target.value)}
-              required
             >
               <option value="">Select a collection</option>
               {collections.map(col => (
@@ -69,7 +55,7 @@ const DocumentModal = ({ document, collections, onClose, onAction }) => {
             </select>
           </div>
           <button type="submit" className="submit-button">
-            {document ? 'Update' : 'Add'} Document
+            Upload Document
           </button>
         </form>
       </div>

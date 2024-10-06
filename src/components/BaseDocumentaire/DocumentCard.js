@@ -16,7 +16,7 @@ const DocumentCard = ({ document }) => {
     <div className="document-card">
       <Icon size={24} className="document-icon" />
       <div className="document-info">
-        <h3 className="document-title">{document.title}</h3>
+        <h3 className="document-title">{document.filename || 'Untitled'}</h3>
         <p className="document-type">{document.type}</p>
       </div>
     </div>

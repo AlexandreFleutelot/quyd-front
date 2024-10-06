@@ -1,11 +1,12 @@
 // src/config/api.js
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://quyd.hexamind.ai/api/v1';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000/api/v1';
 
 export const API_ENDPOINTS = {
   LOGIN: `${API_BASE_URL}/token`,
   USERS: `${API_BASE_URL}/users`,
-  // Add other endpoints as needed
+  DOCUMENTS: `${API_BASE_URL}/documents`,
+  FOLDERS: `${API_BASE_URL}/folders`,
 };
 
 export const getAuthToken = () => localStorage.getItem('authToken');
@@ -16,14 +17,16 @@ export const removeAuthToken = () => localStorage.removeItem('authToken');
 
 export const isAuthenticated = () => !!getAuthToken();
 
-export async function apiRequest(endpoint, method = 'GET', body = null) {
-  const headers = {
-    'Content-Type': 'application/json',
-  };
+export async function apiRequest(endpoint, method = 'GET', body = null, isFormData = false) {
+  const headers = {};
 
   const token = getAuthToken();
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  if (!isFormData) {
+    headers['Content-Type'] = 'application/json';
   }
 
   const config = {
@@ -32,7 +35,7 @@ export async function apiRequest(endpoint, method = 'GET', body = null) {
   };
 
   if (body) {
-    config.body = JSON.stringify(body);
+    config.body = isFormData ? body : JSON.stringify(body);
   }
 
   const response = await fetch(endpoint, config);

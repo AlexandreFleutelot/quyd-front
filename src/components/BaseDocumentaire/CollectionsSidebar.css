@@ -1,113 +1,129 @@
 .collections-sidebar {
-    background-color: #f0f2f5;
-    width: 250px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
-  }
-  
-  .sidebar-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #333;
-  }
+  background-color: #f0f2f5;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
 
-  .collection-item.all-collections {
-    font-weight: bold;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-  }
-  
-  .collections-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .collection-item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: transparent;
-    font-size: 1rem;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    text-align: left;
-  }
-  
-  .collection-item:hover {
-    background-color: #e4e6e9;
-  }
-  
-  .collection-item.active {
-    background-color: #3863d9;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .collection-item svg {
-    margin-right: 0.5rem;
-  }
-  
-  .collection-name {
-    flex-grow: 1;
-  }
-  
-  .collection-count {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  .collection-item.active .collection-count {
-    color: #fff;
-  }
-  
-  .new-collection-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem;
-    background-color: #3863d9;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .new-collection-button:hover {
-    background-color: #2d4eb8;
-  }
-  
-  .new-collection-button svg {
-    margin-right: 0.5rem;
-  }
-  
-  /* Scrollbar styling */
-  .collections-list::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .collections-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .collections-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 3px;
-  }
-  
-  .collections-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.collections-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.collection-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.collection-item:hover {
+  background-color: #e4e6e9;
+}
+
+.collection-item.active {
+  background-color: #3863d9;
+  color: white;
+  font-weight: bold;
+}
+
+.collection-item svg {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.collection-name {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.collection-count {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.collection-item.active .collection-count {
+  color: #fff;
+}
+
+.collection-actions {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.collection-item:hover .collection-actions {
+  opacity: 1;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  padding-left: 0.2rem;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.edit-icon {
+  color: #4a90e2;
+}
+
+.delete-icon {
+  color: #e74c3c;
+}
+
+.edit-icon:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.delete-icon:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.new-collection-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #3863d9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.new-collection-button:hover {
+  background-color: #2d4eb8;
+}
+
+.new-collection-button svg {
+  margin-right: 0.5rem;
+}
